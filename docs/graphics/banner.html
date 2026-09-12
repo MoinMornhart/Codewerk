@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1600px; height: 560px; background: transparent; overflow: hidden; }
+  body { font-family: "Segoe UI Variable Display", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif; color: #e6e9ef; }
+  .banner {
+    position: absolute; inset: 0; border-radius: 28px; overflow: hidden; border: 1px solid #232a38;
+    background:
+      radial-gradient(900px 520px at 88% 18%, rgba(138, 63, 252, 0.34), transparent 60%),
+      radial-gradient(760px 520px at 6% 112%, rgba(55, 118, 171, 0.48), transparent 60%),
+      linear-gradient(135deg, #0d1018, #141a28);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
+  }
+  .left { position: absolute; left: 88px; top: 0; bottom: 0; width: 760px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 28px; }
+  .mark {
+    width: 116px; height: 116px; border-radius: 30px; display: grid; place-items: center;
+    background: linear-gradient(135deg, #7aa2ff, #8a3ffc); box-shadow: 0 18px 44px rgba(122, 162, 255, 0.35);
+    font: 800 48px "Cascadia Code", "Cascadia Mono", Consolas, monospace; color: #fff; letter-spacing: -4px;
+  }
+  h1 { font-size: 112px; font-weight: 750; letter-spacing: -3px; line-height: 1; }
+  .tag { font-size: 33px; color: #c5cbd8; line-height: 1.35; }
+  .pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+  .pill { display: flex; align-items: center; gap: 10px; padding: 9px 18px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 22px; font-weight: 600; }
+  .dot { width: 13px; height: 13px; border-radius: 50%; }
+  .right { position: absolute; right: 80px; top: 64px; width: 640px; }
+  .window { background: #0b0d12; border: 1px solid #2a303c; border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); overflow: hidden; }
+  .bar { display: flex; gap: 8px; align-items: center; padding: 14px 18px; background: #161a22; border-bottom: 1px solid #2a303c; color: #8d95a5; font-size: 17px; }
+  .bar i { width: 13px; height: 13px; border-radius: 50%; display: inline-block; }
+  pre { font: 21px/1.6 "Cascadia Code", "Cascadia Mono", Consolas, monospace; padding: 20px 26px; color: #e6e9ef; }
+  .c { color: #6b7385; font-style: italic; } .n { color: #f78c6c; } .s { color: #c3e88d; } .f { color: #82aaff; }
+  .out { border-top: 1px solid #2a303c; padding: 14px 26px; font: 19px/1.5 "Cascadia Code", Consolas, monospace; color: #3fb97a; }
+  .bubble { position: relative; margin: 18px 0 0 110px; background: #1b2233; border: 1px solid #33405c; border-radius: 16px; padding: 16px 22px; font-size: 20px; line-height: 1.5; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+  .who { color: #7aa2ff; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .bubble b { color: #fff; }
+  .bubble code { font-family: "Cascadia Code", Consolas, monospace; background: rgba(255,255,255,0.08); padding: 1px 7px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="grid"></div>
+  <div class="left">
+    <div class="brand"><div class="mark">&lt;/&gt;</div><h1>Codewerk</h1></div>
+    <p class="tag" id="tag"></p>
+    <div class="pills">
+      <span class="pill"><span class="dot" style="background:#3776ab"></span>Python</span>
+      <span class="pill"><span class="dot" style="background:#f0c419"></span>JavaScript</span>
+      <span class="pill"><span class="dot" style="background:#e76f00"></span>Java</span>
+      <span class="pill"><span class="dot" style="background:#8a3ffc"></span>C#</span>
+      <span class="pill"><span class="dot" style="background:#00599c"></span>C++</span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="window">
+      <div class="bar"><i style="background:#ef6a60"></i><i style="background:#e0b341"></i><i style="background:#3fb97a"></i><span style="margin-left:10px" id="file"></span></div>
+<pre><span class="c" id="comment"></span>
+<span class="n" id="const1"></span> = <span class="n">0.621371</span>
+
+km = <span class="f">float</span>(<span class="f">input</span>(<span class="s" id="prompt"></span>))
+<span class="f">print</span>(<span class="s" id="fstring"></span>)</pre>
+      <div class="out" id="out"></div>
+    </div>
+    <div class="bubble"><div class="who">Mentor</div><span id="review"></span></div>
+  </div>
+</div>
+<script>
+  const lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'de';
+  const text = {
+    de: {
+      tag: 'Programmieren lernen mit deinem KI-Mentor – jeden Tag ein Level, bis zum eigenen Spiel.',
+      file: 'umrechner.py',
+      comment: '# Übung 1: Kilometer in Meilen',
+      const1: 'KM_IN_MEILEN',
+      prompt: '"Kilometer: "',
+      fstring: 'f"{km} km = {km * KM_IN_MEILEN:.2f} mi"',
+      out: '▶ 12.5 km = 7.77 mi',
+      review: '✅ <b>Funktioniert.</b> Und was passiert bei <code>12,5</code>? Probier es aus!',
+    },
+    en: {
+      tag: 'Learn to code with your AI mentor – one level a day, all the way to your own game.',
+      file: 'converter.py',
+      comment: '# Exercise 1: kilometers to miles',
+      const1: 'KM_TO_MILES',
+      prompt: '"Kilometers: "',
+      fstring: 'f"{km} km = {km * KM_TO_MILES:.2f} mi"',
+      out: '▶ 12.5 km = 7.77 mi',
+      review: '✅ <b>Works.</b> And what happens with <code>12,5</code>? Try it!',
+    },
+  }[lang];
+  for (const [id, value] of Object.entries(text)) {
+    const node = document.getElementById(id);
+    if (id === 'review') node.innerHTML = value;
+    else node.textContent = value;
+  }
+</script>
+</body>
+</html>

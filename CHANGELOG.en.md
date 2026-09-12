@@ -6,6 +6,13 @@ Newest entries first. Versioning scheme: see [README.en.md](README.en.md).
 
 <!-- ENTRIES -->
 
+## [Codewerk 0.0.4] – 2026-09-12
+- README fully redesigned: banner, badges, course table with language logos, screenshots, Mermaid diagrams for the learning day and architecture, callout boxes
+- Own app icon (build/icon.png) instead of the default Electron icon – ships with the next release
+- npm run graphics renders banners, icon and real app screenshots (German and English) automatically
+- GitHub Actions runs the unit tests on every push
+- Pyodide path is resolved relative to the source file – more robust with other entry scripts
+
 ## [Codewerk 0.0.3] – 2026-09-12
 - release.js creates the GitHub release as a draft first and publishes it only after the upload – prevents duplicate releases
 - Release notes are generated from CHANGELOG.md and CHANGELOG.en.md

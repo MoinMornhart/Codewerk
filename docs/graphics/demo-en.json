@@ -1,0 +1,65 @@
+{
+  "settings": { "uiLang": "en", "model": "", "effort": "medium", "apiKeyEnc": null },
+  "courses": {
+    "python": {
+      "sessionId": null,
+      "day": 3,
+      "sessionDates": ["2026-09-10", "2026-09-11", "2026-09-12"],
+      "archive": [],
+      "exercise": {
+        "title": "Kilometers to miles",
+        "instructions": "Read a distance in **kilometers** and print it in **miles**.\n\n- 1 km = 0.621371 miles\n- Round the result to **two decimal places**\n\nExample: input `12.5` → `12.5 km are 7.77 miles`",
+        "starter_code": "# Write your code here\n"
+      },
+      "editorCode": "# Exercise 1: kilometers to miles\nKM_TO_MILES = 0.621371\n\nkm = float(input(\"Kilometers: \"))\nmiles = km * KM_TO_MILES\nprint(f\"{km} km are {miles:.2f} miles\")\n",
+      "profile": {
+        "level": 1,
+        "lesson": 4,
+        "phase": "Lesson 4 – Type conversion",
+        "progress_percent": 45,
+        "streak": 3,
+        "goals": "Build a small game of my own · 4 h/week · 45-min sessions · try first, theory second",
+        "mastered": ["print()", "Variables", "input()", "= vs. =="],
+        "shaky": ["f-strings", "Rounding with :.2f"],
+        "open": ["if/else", "Loops", "Functions"],
+        "mistakes": [
+          { "topic": "Text instead of a number from input()", "clean_reviews": 1, "next_review": "Lesson 5" },
+          { "topic": "Comma instead of a dot in decimals", "clean_reviews": 0, "next_review": "Lesson 5" }
+        ],
+        "projects": [
+          { "level": 0, "name": "A program that introduces itself and does some math", "rating": "5/4/4" }
+        ],
+        "glossary": [
+          { "term": "Variable", "meaning": "A named storage place for a value" },
+          { "term": "String", "meaning": "Text in quotes" },
+          { "term": "Type conversion", "meaning": "Turning a value into another data type, e.g. float(\"12.5\")" }
+        ],
+        "recommendation": "Make input safe: what happens with \"12,5\"? Then lesson 5 – operators."
+      },
+      "transcript": [
+        { "type": "day", "text": "[Codewerk · Python · Day 3]" },
+        { "type": "mentor", "text": "Good morning! Today's plan: **Level 1 · Lesson 4 – Type conversion**.\n\n🔁 Two review questions first:\n\n1. What is the difference between `=` and `==`?\n2. Which data type does `input()` always return?" },
+        { "type": "user", "text": "1. `=` assigns a value, `==` compares two values.\n2. Always a string, so text." },
+        { "type": "mentor", "text": "Both correct. ✅\n\n💡 **Concept: type conversion**\n\nImagine someone writes \"12\" on a piece of paper. You can only calculate with it once you read it as a number in your head. That is exactly what `float()` does:\n\n```python\n# input() returns text – float() turns it into a decimal number\nkm = float(input(\"Kilometers: \"))\nprint(km * 2)\n```\n\n⚠️ Typical mistake: `\"12\" * 2` gives `\"1212\"` – text is repeated, not doubled." },
+        { "type": "tool", "name": "set_exercise", "title": "Kilometers to miles" },
+        { "type": "mentor", "text": "🧩 **Exercise 1** is in your editor. Write the code, press **▶ Run** and send it to me with **\"Send to mentor\"**." },
+        { "type": "user", "text": "Here is my code for the exercise \"Kilometers to miles\":\n\n```python\nkm = float(input(\"Kilometers: \"))\nmiles = km * 0.621371\nprint(f\"{km} km are {miles:.2f} miles\")\n```\n\nOutput when running it:\n\n```text\nKilometers: 12.5\n12.5 km are 7.77 miles\n```" },
+        { "type": "mentor", "text": "✅ **Works:** `float()` converts the input correctly, `:.2f` rounds cleanly to two places.\n\n⚠️ **Risks:** If someone types `12,5` with a comma, the program crashes with a `ValueError`.\n\n🔧 **Better like this:** Give the factor a name – `KM_TO_MILES = 0.621371`. Then everyone sees at once what the number means.\n\n📚 **Concept behind it:** Always name \"magic numbers\" in code.\n\n⭐ Correctness 5 · Readability 4 · Structure 4\n\nAdd the constant – and then: what happens when you type `12,5`? Tell me **before** you try it." },
+        { "type": "tool", "name": "update_learning_profile" }
+      ]
+    },
+    "javascript": {
+      "sessionId": null,
+      "day": 1,
+      "sessionDates": ["2026-09-09"],
+      "archive": [],
+      "exercise": null,
+      "editorCode": "",
+      "transcript": [],
+      "profile": {
+        "level": 0, "lesson": 2, "phase": "Lesson 2", "progress_percent": 20, "streak": 1,
+        "goals": "", "mastered": ["console.log()"], "shaky": [], "open": [], "mistakes": [], "projects": [], "glossary": [], "recommendation": ""
+      }
+    }
+  }
+}

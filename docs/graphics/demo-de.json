@@ -1,0 +1,65 @@
+{
+  "settings": { "uiLang": "de", "model": "", "effort": "medium", "apiKeyEnc": null },
+  "courses": {
+    "python": {
+      "sessionId": null,
+      "day": 3,
+      "sessionDates": ["2026-09-10", "2026-09-11", "2026-09-12"],
+      "archive": [],
+      "exercise": {
+        "title": "Kilometer in Meilen",
+        "instructions": "Lies eine Strecke in **Kilometern** ein und gib sie in **Meilen** aus.\n\n- 1 km = 0,621371 Meilen\n- Ergebnis auf **zwei Nachkommastellen** runden\n\nBeispiel: Eingabe `12.5` → `12.5 km sind 7.77 Meilen`",
+        "starter_code": "# Schreibe hier deinen Code\n"
+      },
+      "editorCode": "# Übung 1: Kilometer in Meilen\nKM_IN_MEILEN = 0.621371\n\nkm = float(input(\"Kilometer: \"))\nmeilen = km * KM_IN_MEILEN\nprint(f\"{km} km sind {meilen:.2f} Meilen\")\n",
+      "profile": {
+        "level": 1,
+        "lesson": 4,
+        "phase": "Lektion 4 – Typumwandlung",
+        "progress_percent": 45,
+        "streak": 3,
+        "goals": "Ein eigenes kleines Spiel entwickeln · 4 Std/Woche · Sessions à 45 Min · erst ausprobieren, dann Theorie",
+        "mastered": ["print()", "Variablen", "input()", "= vs. =="],
+        "shaky": ["f-Strings", "Runden mit :.2f"],
+        "open": ["if/else", "Schleifen", "Funktionen"],
+        "mistakes": [
+          { "topic": "Text statt Zahl bei input()", "clean_reviews": 1, "next_review": "Lektion 5" },
+          { "topic": "Komma statt Punkt bei Kommazahlen", "clean_reviews": 0, "next_review": "Lektion 5" }
+        ],
+        "projects": [
+          { "level": 0, "name": "Programm, das sich vorstellt und rechnet", "rating": "5/4/4" }
+        ],
+        "glossary": [
+          { "term": "Variable (variable)", "meaning": "Benannter Speicherplatz für einen Wert" },
+          { "term": "String (Zeichenkette)", "meaning": "Text in Anführungszeichen" },
+          { "term": "Typumwandlung (type conversion)", "meaning": "Einen Wert in einen anderen Datentyp umwandeln, z. B. float(\"12.5\")" }
+        ],
+        "recommendation": "Eingaben absichern: Was passiert bei „12,5“? Danach Lektion 5 – Operatoren."
+      },
+      "transcript": [
+        { "type": "day", "text": "[Codewerk · Python · Tag 3]" },
+        { "type": "mentor", "text": "Guten Morgen! Heute steht **Level 1 · Lektion 4 – Typumwandlung** auf dem Plan.\n\n🔁 Zuerst zwei Wiederholungsfragen:\n\n1. Was ist der Unterschied zwischen `=` und `==`?\n2. Welchen Datentyp liefert `input()` immer zurück?" },
+        { "type": "user", "text": "1. `=` weist einen Wert zu, `==` vergleicht zwei Werte.\n2. Immer einen String, also Text." },
+        { "type": "mentor", "text": "Beides richtig. ✅\n\n💡 **Konzept: Typumwandlung (type conversion)**\n\nStell dir vor, jemand schreibt dir „12“ auf einen Zettel. Rechnen kannst du erst, wenn du es im Kopf als Zahl liest. Genau das macht `float()`:\n\n```python\n# input() liefert Text – float() macht daraus eine Kommazahl\nkm = float(input(\"Kilometer: \"))\nprint(km * 2)\n```\n\n⚠️ Typischer Fehler: `\"12\" * 2` ergibt `\"1212\"` – Text wird wiederholt, nicht verdoppelt." },
+        { "type": "tool", "name": "set_exercise", "title": "Kilometer in Meilen" },
+        { "type": "mentor", "text": "🧩 **Übung 1** liegt in deinem Editor. Schreib den Code, drück **▶ Ausführen** und schick ihn mir mit **„An Mentor senden“**." },
+        { "type": "user", "text": "Hier ist mein Code zur Übung „Kilometer in Meilen“:\n\n```python\nkm = float(input(\"Kilometer: \"))\nmeilen = km * 0.621371\nprint(f\"{km} km sind {meilen:.2f} Meilen\")\n```\n\nAusgabe beim Ausführen:\n\n```text\nKilometer: 12.5\n12.5 km sind 7.77 Meilen\n```" },
+        { "type": "mentor", "text": "✅ **Funktioniert:** `float()` wandelt die Eingabe richtig um, `:.2f` rundet sauber auf zwei Stellen.\n\n⚠️ **Risiken:** Gibt jemand `12,5` mit Komma ein, stürzt das Programm mit `ValueError` ab.\n\n🔧 **Besser so:** Gib dem Faktor einen Namen – `KM_IN_MEILEN = 0.621371`. Dann sieht jeder sofort, was die Zahl bedeutet.\n\n📚 **Konzept dahinter:** „Magische Zahlen“ im Code immer benennen.\n\n⭐ Korrektheit 5 · Lesbarkeit 4 · Struktur 4\n\nBau die Konstante ein – und dann: Was passiert, wenn du `12,5` eingibst? Sag es mir, **bevor** du es ausprobierst." },
+        { "type": "tool", "name": "update_learning_profile" }
+      ]
+    },
+    "javascript": {
+      "sessionId": null,
+      "day": 1,
+      "sessionDates": ["2026-09-09"],
+      "archive": [],
+      "exercise": null,
+      "editorCode": "",
+      "transcript": [],
+      "profile": {
+        "level": 0, "lesson": 2, "phase": "Lektion 2", "progress_percent": 20, "streak": 1,
+        "goals": "", "mastered": ["console.log()"], "shaky": [], "open": [], "mistakes": [], "projects": [], "glossary": [], "recommendation": ""
+      }
+    }
+  }
+}

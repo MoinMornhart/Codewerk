@@ -30,7 +30,9 @@ protocol.registerSchemesAsPrivileged([
 const unpacked = (p) => p.replace(`app.asar${path.sep}`, `app.asar.unpacked${path.sep}`);
 const RENDERER_DIR = path.join(__dirname, '..', 'renderer');
 const PROMPTS_DIR = path.join(__dirname, '..', '..', 'prompts');
-const PYODIDE_DIR = unpacked(path.join(app.getAppPath(), 'node_modules', 'pyodide'));
+// Relative to this file (not app.getAppPath()) so it also works when another entry script
+// starts the app, e.g. scripts/graphics.js.
+const PYODIDE_DIR = unpacked(path.join(__dirname, '..', '..', 'node_modules', 'pyodide'));
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',

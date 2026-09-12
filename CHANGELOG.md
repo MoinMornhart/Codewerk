@@ -6,6 +6,13 @@ Neueste Einträge oben. Versionsschema: siehe [README.md](README.md).
 
 <!-- EINTRÄGE -->
 
+## [Codewerk 0.0.4] – 2026-09-12
+- README komplett neu gestaltet: Banner, Badges, Kurs-Tabelle mit Sprach-Logos, Screenshots, Mermaid-Diagramme für Lerntag und Aufbau, Hinweis-Boxen
+- Eigenes App-Icon (build/icon.png) statt Electron-Standardsymbol – kommt mit dem nächsten Release
+- npm run graphics erzeugt Banner, Icon und echte Screenshots der App (Deutsch und Englisch) automatisch
+- GitHub Actions führt bei jedem Push die Unit-Tests aus
+- Pyodide-Pfad wird relativ zur Quelldatei bestimmt – robuster bei anderen Startskripten
+
 ## [Codewerk 0.0.3] – 2026-09-12
 - release.js legt den GitHub-Release zuerst als Entwurf an und veröffentlicht ihn erst nach dem Upload – verhindert doppelte Releases
 - Release-Text wird automatisch aus CHANGELOG.md und CHANGELOG.en.md erzeugt

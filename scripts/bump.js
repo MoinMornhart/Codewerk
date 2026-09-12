@@ -70,8 +70,9 @@ function main() {
   const entryEn = `## [Codewerk ${to}] – ${date}\n${bullets(args.en)}`;
   write('CHANGELOG.md', insertAfterMarker(read('CHANGELOG.md'), '<!-- EINTRÄGE -->', entryDe, 'CHANGELOG.md'), args.dryRun);
   write('CHANGELOG.en.md', insertAfterMarker(read('CHANGELOG.en.md'), '<!-- ENTRIES -->', entryEn, 'CHANGELOG.en.md'), args.dryRun);
-  write('README.md', read('README.md').replace(/(\*\*Codewerk-Version:\*\* )[\d.]+/, `$1${to}`), args.dryRun);
-  write('README.en.md', read('README.en.md').replace(/(\*\*Codewerk version:\*\* )[\d.]+/, `$1${to}`), args.dryRun);
+  // The version line may be Markdown (**…**) or HTML (<b>…</b>).
+  write('README.md', read('README.md').replace(/((?:\*\*|<b>)Codewerk-Version:(?:\*\*|<\/b>) )[\d.]+/, `$1${to}`), args.dryRun);
+  write('README.en.md', read('README.en.md').replace(/((?:\*\*|<b>)Codewerk version:(?:\*\*|<\/b>) )[\d.]+/, `$1${to}`), args.dryRun);
 
   let message = `[Codewerk ${to}] ${args.title}\n\nDE:\n${bullets(args.de)}\nEN:\n${bullets(args.en)}\n`;
   if (args.trailer.length) message += `\n${args.trailer.join('\n')}\n`;
