@@ -1,0 +1,61 @@
+{
+  "name": "codewerk",
+  "productName": "Codewerk",
+  "version": "0.0.2",
+  "description": "Lern-App mit KI-Mentor: fünf Programmiersprachen, tägliche Level-Sessions, Code direkt in der App schreiben und prüfen lassen.",
+  "main": "src/main/main.js",
+  "author": "MoinMornhart",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoinMornhart/Codewerk.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test \"test/**/*.test.js\"",
+    "selftest": "electron . --selftest",
+    "bump": "node scripts/bump.js",
+    "dist": "electron-builder --win",
+    "release": "node scripts/release.js"
+  },
+  "build": {
+    "appId": "de.moinmornhart.codewerk",
+    "productName": "Codewerk",
+    "files": [
+      "src/**/*",
+      "prompts/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/pyodide/**",
+      "node_modules/@anthropic-ai/claude-agent-sdk-*/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MoinMornhart",
+        "repo": "Codewerk",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.269",
+    "@anthropic-ai/sdk": "^0.125.0",
+    "electron-updater": "^6.8.9",
+    "pyodide": "^314.0.6",
+    "zod": "^4.6.2"
+  },
+  "devDependencies": {
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3"
+  }
+}
