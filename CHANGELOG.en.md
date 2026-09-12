@@ -6,6 +6,12 @@ Newest entries first. Versioning scheme: see [README.en.md](README.en.md).
 
 <!-- ENTRIES -->
 
+## [Codewerk 0.0.3] – 2026-09-12
+- release.js creates the GitHub release as a draft first and publishes it only after the upload – prevents duplicate releases
+- Release notes are generated from CHANGELOG.md and CHANGELOG.en.md
+- bump.js creates annotated tags so they get pushed
+- md.js without raw control characters, two new Markdown tests
+
 ## [Codewerk 0.0.2] – 2026-09-11
 - Electron app for Windows: home screen with five courses (Python, JavaScript, Java, C#, C++) as self-contained mini apps.
 - AI mentor through the learner's own Claude account (Claude Agent SDK, no API key needed); mentor instructions in German and English.

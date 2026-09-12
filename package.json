@@ -1,7 +1,7 @@
 {
   "name": "codewerk",
   "productName": "Codewerk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lern-App mit KI-Mentor: fünf Programmiersprachen, tägliche Level-Sessions, Code direkt in der App schreiben und prüfen lassen.",
   "main": "src/main/main.js",
   "author": "MoinMornhart",
@@ -43,7 +43,7 @@
         "provider": "github",
         "owner": "MoinMornhart",
         "repo": "Codewerk",
-        "releaseType": "release"
+        "releaseType": "draft"
       }
     ]
   },

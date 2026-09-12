@@ -2,7 +2,7 @@
 
 🇩🇪 Deutsch · [🇬🇧 English](README.en.md)
 
-**Codewerk-Version:** 0.0.2
+**Codewerk-Version:** 0.0.3
 
 Codewerk ist eine Lern-App für Windows. Ein KI-Mentor (Claude) bringt dir Programmieren bei – von Level 0 bis Level 10, in fünf eigenständigen Kursen: **Python, JavaScript, Java, C# und C++**. Jeder Kurs ist eine eigene kleine App mit eigenem Level, Lernprofil, Chat und Archiv. Empfohlen: nacheinander, jeden Tag eine Session.
 
